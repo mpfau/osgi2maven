@@ -12,7 +12,7 @@ $url
   <packaging>$packaging</packaging>
   <% if (bundles) { %><dependencies><% for (def bundle in bundles) { %>
 	<dependency>
-	  <groupId>$bundle.name</groupId>
+	  <groupId>$group</groupId>
 	  <artifactId>$bundle.name</artifactId>
 	  <version>$bundle.version</version>
 	  <scope>compile</scope>
