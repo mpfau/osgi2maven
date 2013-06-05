@@ -12,7 +12,9 @@ $url
   <packaging>$packaging</packaging>
   <% if (bundles) { %><dependencies><% for (def bundle in bundles) { %>
 	<dependency>
-	  <groupId>$bundle.name</groupId>
+<% if (bundle.hasProperty("group") && bundle.group) { %>   <groupId>$bundle.group</groupId>
+<% } else if (dependencyGroup) { %>   <groupId>$dependencyGroup</groupId>
+<% } else { %>   <groupId>$bundle.name</groupId><% } %>
 	  <artifactId>$bundle.name</artifactId>
 	  <version>$bundle.version</version>
 	  <scope>compile</scope>

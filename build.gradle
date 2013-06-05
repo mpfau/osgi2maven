@@ -1,6 +1,6 @@
-usePlugin 'groovy'
-usePlugin 'eclipse'
-usePlugin 'maven'
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
 
 group = 'de.northernideas'
 version = '1.0'
@@ -14,10 +14,11 @@ repositories {
 dependencies {
 	groovy group: 'org.codehaus.groovy', name: 'groovy', version: '1.7.0'
 	compile 'org.apache.ant:ant:1.7.0'
-	compile 'org.apache.felix:org.apache.felix.main:2.0.4'
+	compile 'org.apache.felix:org.apache.felix.main:3.0.7'
 	compile module('org.apache.maven:maven-ant-tasks:2.0.9') {
 		transitive = false
 	}
+	compile group:'biz.aQute', name: 'bnd', version:'0.0.384'
 	testCompile 'junit:junit:4.7'
 	testCompile 'xmlunit:xmlunit:1.3'
 }
