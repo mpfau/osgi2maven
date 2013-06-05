@@ -13,6 +13,7 @@ import org.osgi.framework.Constants
 
 class BundleReader {
     String group = null
+    String dependencyGroup = null
 
     /**
      * Reads an OSGI-Bundle and and converts it into a POM 
@@ -45,6 +46,7 @@ class BundleReader {
         } else {
             pom.group = pom.artifact
         }
+        pom.dependencyGroup = dependencyGroup
         pom.version = manifest.attr.getValue(Constants.BUNDLE_VERSION)
 
         def requireBundlesString = manifest.attr.getValue(Constants.REQUIRE_BUNDLE)
